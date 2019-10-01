@@ -1,6 +1,6 @@
-# filters
+# Sample Flutter App
 
-A new Flutter project.
+A new Flutter project as POC for an event app for Android and iOS.
 
 ## Getting Started
 
