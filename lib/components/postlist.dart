@@ -1,13 +1,14 @@
+import 'package:filters/bloc/post_bloc.dart';
 import 'package:filters/model/post.dart';
 import 'package:filters/services/http.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-Container PostList(BuildContext context) => Container(
-      child: FutureBuilder(
-        future: fetchPosts(),
-        builder: (BuildContext context, AsyncSnapshot<List<Post>> snapshot) {
-          var posts = snapshot.data;
-          if (snapshot.data == null) {
+Container PostList(BuildContext context, PostBloc bloc) => Container(
+      child: BlocBuilder(
+        bloc: bloc,
+        builder: (BuildContext context, List<Post> posts) {
+          if (posts == null || posts.isEmpty) {
             return Container(child: new Center(child: new CircularProgressIndicator()));
           } else {
             return ListView.builder(

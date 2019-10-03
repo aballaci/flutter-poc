@@ -1,7 +1,13 @@
+import 'package:filters/bloc/post_bloc.dart';
+import 'package:filters/bloc/simple_bloc_delegate.dart';
+import 'package:filters/pages/page2.dart';
 import 'package:filters/router.dart';
 import 'package:flutter/material.dart';
+import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
+  BlocSupervisor.delegate = SimpleBlocDelegate();
   FluroRouter.setupRouter();
   runApp(MyApp());
 }
@@ -16,9 +22,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
         // Initial Page set to Login Page
-        initialRoute: 'page1',
-        // Use the generator provided by Fluro package
-        onGenerateRoute: FluroRouter.router.generator
+      home: BlocProvider(
+        builder: (context) => PostBloc(),
+        child: Page2(),
+      ),
     );
   }
 }

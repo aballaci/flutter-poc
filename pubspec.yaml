@@ -19,6 +19,8 @@ environment:
 dependencies:
   fluro: ^1.4.0
   http: ^0.12.0+2
+  flutter_bloc: ^0.21.0
+  meta: ^1.1.6
   flutter:
     sdk: flutter
 

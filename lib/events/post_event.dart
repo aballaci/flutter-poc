@@ -1,0 +1,1 @@
+enum PostEvent { load, unload, filterOdds }
