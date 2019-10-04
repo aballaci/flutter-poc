@@ -1,3 +1,4 @@
+import 'package:filters/bloc/event_bloc.dart';
 import 'package:filters/bloc/post_bloc.dart';
 import 'package:filters/pages/page1.dart';
 import 'package:filters/pages/page2.dart';
@@ -25,7 +26,10 @@ Drawer drawer(BuildContext context) => Drawer(
           Navigator.of(context).pop();
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => Page1()),
+            MaterialPageRoute(builder: (context) => BlocProvider(
+              builder: (context) => EventBloc(),
+              child: Page1(),
+            )),
           );
         },
       ),

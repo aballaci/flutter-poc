@@ -10,7 +10,6 @@ class SimpleBlocDelegate extends BlocDelegate {
   @override
   void onTransition(Bloc bloc, Transition transition) {
     super.onTransition(bloc, transition);
-    print("this state: " + transition.currentState.toString() + " next State: " +  transition.nextState.toString());
     print(transition);
   }
 

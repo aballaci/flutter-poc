@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:filters/events/post_event.dart';
 import 'package:filters/model/post.dart';
+import 'package:filters/model/status.dart';
 import 'package:filters/services/post_service.dart';
 
 class PostBloc extends Bloc<PostEvent, PostResponse> {

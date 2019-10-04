@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:filters/model/status.dart';
 
 class Post {
   int userId;
@@ -25,7 +26,7 @@ class Post {
   }
 }
 
-enum Status  {initial, loading, loaded, error}
+
 
 class PostResponse extends Equatable {
   List<Post> postList;
