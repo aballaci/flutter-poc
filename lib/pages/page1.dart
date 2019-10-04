@@ -19,11 +19,14 @@ class Page1 extends StatelessWidget {
           child: new Column(children: [
             DatePickerTimeline(
               DateTime.now(),
+
               onDateChange: (date) {
                 // New date selected
                 print(date.toString());
                 eventBloc.dispatch(NavigateToDateEvent(date: date));
               },
+              selectionColor: Colors.blue,
+              locale: 'de_DE',
             ),
             Expanded(
               child: eventList(context, eventBloc),
