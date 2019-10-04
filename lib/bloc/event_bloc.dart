@@ -12,24 +12,14 @@ class EventBloc extends Bloc<NavigateToDateEvent, EventWrapper> {
   @override
   EventWrapper get initialState {
     var today = new DateTime.now();
-    var thisDay = DateTime(today.year, today.month, today.day);
-    print("today" + today.toString());
-    print("thisday: " + thisDay.toString());
-    var eventsToday = events.where((e) {
-      print("Event start:" +
-          e.start.toString() +
-          "   this day:" +
-          thisDay.toString());
-      return e.start.compareTo(thisDay) == 0;
-    }).toList();
+    var todayTruncated = DateTime(today.year, today.month, today.day);
+    var eventsToday = events.where((e) => e.start.isAtSameMomentAs(todayTruncated)).toList();
     return EventWrapper(status: Status.initial, eventList: eventsToday);
   }
 
   @override
   Stream<EventWrapper> mapEventToState(NavigateToDateEvent event) async* {
-    var eventsToday = events.where((e) {
-      return e.start.compareTo(event.date) == 0;
-    }).toList();
+    var eventsToday = events.where((e) => e.start.isAtSameMomentAs(event.date)).toList();
     yield EventWrapper(status: Status.initial, eventList: eventsToday);
   }
 }

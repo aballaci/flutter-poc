@@ -17,9 +17,7 @@ class PostBloc extends Bloc<PostEvent, PostResponse> {
       case PostEvent.load:
         {
           yield PostResponse(status: Status.loading, postList: new List(0));
-          print("loading");
           List<Post> posts = await fetchPosts();
-          print("got result: " + posts.toString());
           yield PostResponse(status: Status.loaded, postList: posts);
         }
         break;
