@@ -1,3 +1,6 @@
+import 'package:equatable/equatable.dart';
+import 'package:filters/model/status.dart';
+
 class Post {
   int userId;
   int id;
@@ -21,4 +24,18 @@ class Post {
     data['body'] = this.body;
     return data;
   }
+}
+
+
+
+class PostResponse extends Equatable {
+  List<Post> postList;
+  Status status;
+
+  PostResponse({this.status, this.postList});
+
+  @override
+  // TODO: implement props
+  List<Object> get props => postList;
+
 }
