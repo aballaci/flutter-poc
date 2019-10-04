@@ -2,7 +2,7 @@
 
 A new Flutter project as POC for an event app for Android and iOS.
 
-![standard view](https://lh4.googleusercontent.com/7UQz7FWJl-LVTEymG1PmPGWl9KXWHFwSqRiySG8TBYIQwzkLe2qGUHub8ODi21DaUvP4gvjMBtnLcQ=w2560-h937-rw)
+![standard view](https://lh3.googleusercontent.com/GEZdvYRHhcxTpHv1wH_mFltYsUBv3x6U3D-Ky4hhR8jMZ2s4drgmYI8qP7WQV92bShvvRXP6QH-1Rw=w2560-h937-rw)
 
 ## Getting Started
 
