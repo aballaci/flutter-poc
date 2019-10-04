@@ -2,6 +2,8 @@
 
 A new Flutter project as POC for an event app for Android and iOS.
 
+![standard view](https://drive.google.com/file/d/1IKoYwl1CkLOF-bdfxpbkNgtHVto4RFjO/view?usp=sharing)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
