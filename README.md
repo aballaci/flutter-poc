@@ -8,6 +8,10 @@ A new Flutter project as POC for an event app for Android and iOS.
 
 This project is a starting point for a Flutter application.
 
+Displays a list of posts using ListView and implements the BloC pattern.
+
+On the second page a locally parsed json array of events is displayed as daily events using the date_picker_timeline: ^1.1.3
+
 A few resources to get you started if this is your first Flutter project:
 
 - [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
