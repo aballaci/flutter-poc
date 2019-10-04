@@ -16,7 +16,7 @@ Drawer drawer(BuildContext context) => Drawer(
       DrawerHeader(
         child: Text('Drawer Header'),
         decoration: BoxDecoration(
-          color: Colors.greenAccent,
+          color: Colors.blue,
         ),
       ),
       ListTile(
