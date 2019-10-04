@@ -1,6 +1,6 @@
 import 'package:filters/bloc/post_bloc.dart';
 import 'package:filters/components/drawer.dart';
-import 'package:filters/components/postlist.dart';
+import 'package:filters/components/post_list.dart';
 import 'package:filters/events/post_event.dart';
 import 'package:filters/model/post.dart';
 import 'package:flutter/material.dart';
