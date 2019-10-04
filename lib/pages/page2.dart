@@ -6,19 +6,16 @@ import 'package:filters/model/post.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 class Page2 extends StatelessWidget {
-  final String username;
-
-  Page2({this.username});
 
   @override
   Widget build(BuildContext context) {
     final postBloc = BlocProvider.of<PostBloc>(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Page2'),
+        title: Text('Flutter Bloc'),
       ),
       drawer: drawer(context),
-      body: BlocBuilder<PostBloc, List<Post>>(
+      body: BlocBuilder<PostBloc, PostResponse>(
         builder: (context, posts) {
           return PostList(context, postBloc);
         },

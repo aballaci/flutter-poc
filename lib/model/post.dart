@@ -1,3 +1,5 @@
+import 'package:equatable/equatable.dart';
+
 class Post {
   int userId;
   int id;
@@ -21,4 +23,18 @@ class Post {
     data['body'] = this.body;
     return data;
   }
+}
+
+enum Status  {initial, loading, loaded, error}
+
+class PostResponse extends Equatable {
+  List<Post> postList;
+  Status status;
+
+  PostResponse({this.status, this.postList});
+
+  @override
+  // TODO: implement props
+  List<Object> get props => postList;
+
 }

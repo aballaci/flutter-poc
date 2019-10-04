@@ -6,14 +6,18 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 Container PostList(BuildContext context, PostBloc postBloc) => Container(
       child: BlocBuilder(
         bloc: postBloc,
-        builder: (BuildContext context, List<Post> posts) {
-          if (posts == null || posts.isEmpty) {
-            return Container(child: new Center(child: new CircularProgressIndicator()));
-          } else {
+        builder: (BuildContext context, PostResponse postResponse) {
+          if (postResponse.status == Status.initial) {
+            return Container(
+                child: new Center(child: Text("press button to load posts")));
+          } else if (postResponse.status == Status.loading) {
+            return Container(
+                child: new Center(child: new CircularProgressIndicator()));
+          } else if (postResponse.status == Status.loaded) {
             return ListView.builder(
-              itemCount: posts.length,
+              itemCount: postResponse.postList.length,
               itemBuilder: (BuildContext context, int index) {
-                var post = posts[index];
+                var post = postResponse.postList[index];
                 return Card(
                   child: ListTile(
                     leading: Text(post.id.toString()),
@@ -26,6 +30,9 @@ Container PostList(BuildContext context, PostBloc postBloc) => Container(
                 );
               },
             );
+          } else {
+            return Container(
+                child: new Center(child: Text("else case")));
           }
         },
       ),

@@ -8,7 +8,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   BlocSupervisor.delegate = SimpleBlocDelegate();
-  FluroRouter.setupRouter();
   runApp(MyApp());
 }
 

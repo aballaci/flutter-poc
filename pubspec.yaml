@@ -21,6 +21,7 @@ dependencies:
   http: ^0.12.0+2
   flutter_bloc: ^0.21.0
   meta: ^1.1.6
+  equatable: ^0.6.0
   flutter:
     sdk: flutter
 
