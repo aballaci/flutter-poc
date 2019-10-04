@@ -28,6 +28,7 @@ class Page2 extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: 5.0),
             child: FloatingActionButton(
               child: Icon(Icons.add),
+              heroTag: "btn_add",
               onPressed: () {
                 postBloc.dispatch(PostEvent.load);
               },
@@ -37,6 +38,7 @@ class Page2 extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: 5.0),
             child: FloatingActionButton(
               child: Icon(Icons.remove),
+              heroTag: "btn_remove",
               onPressed: () {
                 postBloc.dispatch(PostEvent.unload);
               },
@@ -46,6 +48,7 @@ class Page2 extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: 5.0),
             child: FloatingActionButton(
               child: Icon(Icons.filter_list),
+              heroTag: "btn_filter",
               onPressed: () {
                 postBloc.dispatch(PostEvent.filterOdds);
               },

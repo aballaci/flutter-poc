@@ -1,5 +1,8 @@
+import 'package:filters/pages/page2.dart';
 import 'package:flutter/material.dart';
 import 'package:filters/components/drawer.dart';
+import 'package:date_picker_timeline/date_picker_timeline.dart';
+
 class Page1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -14,8 +17,10 @@ class Page1 extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.exit_to_app),
         onPressed: () {
-          var username = 'hanky';
-          Navigator.pushReplacementNamed(context, 'page2/$username');
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Page2()),
+          );
         },
       ),
     );
