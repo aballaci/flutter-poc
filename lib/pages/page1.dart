@@ -11,42 +11,32 @@ class Page1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final eventBloc = BlocProvider.of<EventBloc>(context);
-    return Scaffold(
-      body: Align(
-        alignment: Alignment.topCenter,
-        child: new Container(
-          margin: const EdgeInsets.only(top: 25.0),
-          child: new Column(children: [
-            DatePickerTimeline(
-              DateTime.now(),
+    return CustomScrollView(
+      slivers: <Widget>[
+        SliverAppBar(
+          title: Text('SliverAppBar'),
+          backgroundColor: Colors.blue,
+          expandedHeight: 200.0,
+          flexibleSpace: FlexibleSpaceBar(
+            background: Image.asset('assets/party.jpeg', fit: BoxFit.cover),
+          ),
 
-              onDateChange: (date) {
-                // New date selected
-                print(date.toString());
-                eventBloc.dispatch(NavigateToDateEvent(date: date));
-              },
-              selectionColor: Colors.blue,
-              locale: 'de_DE',
-            ),
-            Expanded(
-              child: eventList(context, eventBloc),
-            )
-          ]),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.home),
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => BlocProvider(
-                      builder: (context) => PostBloc(),
-                      child: Page2(),
-                    )),
-          );
-        },
-      ),
+
+        SliverFixedExtentList(
+          itemExtent: 150.0,
+          delegate: SliverChildListDelegate(
+            [
+              Container(color: Colors.red),
+              Container(color: Colors.purple),
+              Container(color: Colors.green),
+              Container(color: Colors.orange),
+              Container(color: Colors.yellow),
+              Container(color: Colors.pink),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }

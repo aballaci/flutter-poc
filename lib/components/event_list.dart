@@ -4,14 +4,19 @@ import 'package:filters/model/status.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-Container eventList(BuildContext context, EventBloc eventBloc) => Container(
+class EventList extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final eventBloc = BlocProvider.of<EventBloc>(context);
+    return Container(
       child: BlocBuilder(
         bloc: eventBloc,
         builder: (BuildContext context, EventWrapper eventWrapper) {
           if (eventWrapper.status == Status.initial &&
               eventWrapper.eventList.isEmpty) {
             return Container(
-                child: new Center(child: Text("Es gibt keine Evente für den Tag...")));
+                child: new Center(
+                    child: Text("Es gibt keine Evente für den Tag...")));
           } else if (eventWrapper.status == Status.loading) {
             return Container(
                 child: new Center(child: new CircularProgressIndicator()));
@@ -44,8 +49,16 @@ Container eventList(BuildContext context, EventBloc eventBloc) => Container(
                           ButtonTheme.bar(
                             child: ButtonBar(
                               children: <Widget>[
-                                Icon(Icons.star, size: 20, color: Colors.black54,),
-                                Icon(Icons.favorite, size: 20, color: Colors.redAccent,),
+                                Icon(
+                                  Icons.star,
+                                  size: 20,
+                                  color: Colors.black54,
+                                ),
+                                Icon(
+                                  Icons.favorite,
+                                  size: 20,
+                                  color: Colors.redAccent,
+                                ),
                               ],
                             ),
                           ),
@@ -60,3 +73,6 @@ Container eventList(BuildContext context, EventBloc eventBloc) => Container(
         },
       ),
     );
+    ;
+  }
+}

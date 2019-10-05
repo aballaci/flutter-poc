@@ -14,7 +14,7 @@ class Page2 extends StatelessWidget {
       appBar: AppBar(
         title: Text('Flutter Bloc'),
       ),
-      drawer: drawer(context),
+      drawer: DrawerNavigation(),
       body: BlocBuilder<PostBloc, PostResponse>(
         builder: (context, posts) {
           return PostList(context, postBloc);
