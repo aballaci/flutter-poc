@@ -14,7 +14,8 @@ class Page1 extends StatelessWidget {
         body: CustomScrollView(
           slivers: <Widget>[
             SliverAppBar(
-//              floating: true,
+//            floating: true,
+//            snap: true,
               title: Text('Parties in Nürnberg'),
               backgroundColor: Colors.purple,
               brightness: Brightness.dark,
@@ -24,19 +25,21 @@ class Page1 extends StatelessWidget {
                     'assets/party.jpeg', fit: BoxFit.cover),
               ),
             ),
-            EventList()
+            EventList(),
           ],
         ),
-        bottomSheet: DatePickerTimeline(
+        resizeToAvoidBottomPadding: true,
+
+        bottomNavigationBar: DatePickerTimeline(
           DateTime.now(),
           height: 80.0,
+          daysCount: 90,
           onDateChange: (date) {
             // New date selected
             print(date.toString());
             eventBloc.dispatch(NavigateToDateEvent(date: date));
           },
-
-          selectionColor: Colors.lime,
+          selectionColor: Colors.lime.withAlpha(400),
           locale: 'de_DE',
         ),
       );
