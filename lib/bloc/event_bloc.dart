@@ -7,6 +7,7 @@ import 'package:filters/model/navigate_to_date_event.dart';
 import 'package:filters/model/status.dart';
 
 class EventBloc extends Bloc<NavigateToDateEvent, EventWrapper> {
+
   List<Event> events = eventsJson.map((i) => Event.fromJson(i)).toList();
 
   @override

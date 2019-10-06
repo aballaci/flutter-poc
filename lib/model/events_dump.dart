@@ -146,7 +146,7 @@ const eventsJson = [
     "index": 20,
     "organizer": "Ayers",
     "title": "et do deserunt officia irure",
-    "start": "2019/10/05"
+    "start": "2019/10/07"
   },
   {
     "_id": "5d9770c231977c312c4fafc2",
@@ -195,7 +195,7 @@ const eventsJson = [
     "index": 27,
     "organizer": "Andrews",
     "title": "tempor pariatur consequat magna qui",
-    "start": "2019/10/05"
+    "start": "2019/10/07"
   },
   {
     "_id": "5d9770c238d26135805c73aa",
@@ -230,7 +230,7 @@ const eventsJson = [
     "index": 32,
     "organizer": "Flora",
     "title": "aliqua nisi in aute amet",
-    "start": "2019/10/23"
+    "start": "2019/10/07"
   },
   {
     "_id": "5d9770c297b522604c5eeaea",
@@ -265,7 +265,7 @@ const eventsJson = [
     "index": 37,
     "organizer": "Tucker",
     "title": "cillum aliquip tempor voluptate adipisicing",
-    "start": "2019/10/30"
+    "start": "2019/10/07"
   },
   {
     "_id": "5d9770c2fc8ec774006aa2e8",
@@ -286,7 +286,7 @@ const eventsJson = [
     "index": 40,
     "organizer": "Noel",
     "title": "id incididunt aliquip ea mollit",
-    "start": "2019/10/19"
+    "start": "2019/10/07"
   },
   {
     "_id": "5d9770c284371c856ce87b3e",
@@ -314,7 +314,7 @@ const eventsJson = [
     "index": 44,
     "organizer": "Erika",
     "title": "tempor aliquip culpa officia nostrud",
-    "start": "2019/10/13"
+    "start": "2019/10/07"
   },
   {
     "_id": "5d9770c2f4683fe77236b57f",
