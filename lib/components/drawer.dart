@@ -31,6 +31,7 @@ class DrawerNavigation extends StatelessWidget {
           ),
           ListTile(
             title: Text('Calendar Events'),
+            leading: Icon(Icons.calendar_today),
             trailing: Icon(Icons.arrow_forward),
             onTap: () {
               Navigator.of(context).pop();
@@ -45,7 +46,8 @@ class DrawerNavigation extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Text('Posts from JsonPlaceholder'),
+            leading: Icon(Icons.mail),
+            title: Text('Posts'),
             trailing: Icon(Icons.arrow_forward),
             onTap: () {
               Navigator.of(context).pop();

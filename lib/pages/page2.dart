@@ -13,12 +13,24 @@ class Page2 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Flutter Bloc'),
+        backgroundColor: Color(0xFF93a5cf),
       ),
       drawer: DrawerNavigation(),
-      body: BlocBuilder<PostBloc, PostResponse>(
-        builder: (context, posts) {
-          return PostList(context, postBloc);
-        },
+      body: Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                colors: [
+                  Color(0xFFe4efe9),
+                  Color(0xFF93a5cf),
+                ],
+                begin: Alignment.bottomCenter,
+                end: Alignment.topCenter,
+                tileMode: TileMode.clamp)),
+        child: BlocBuilder<PostBloc, PostResponse>(
+          builder: (context, posts) {
+            return PostList(context, postBloc);
+          },
+        ),
       ),
       floatingActionButton: Column(
         crossAxisAlignment: CrossAxisAlignment.end,

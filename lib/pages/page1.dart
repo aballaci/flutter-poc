@@ -19,10 +19,10 @@ class Page1 extends StatelessWidget {
               title: Text('Parties in Nürnberg'),
               backgroundColor: Colors.purple,
               brightness: Brightness.dark,
-              expandedHeight: 220.0,
+              expandedHeight: 230.0,
               flexibleSpace: FlexibleSpaceBar(
                 background: Image.asset(
-                    'assets/party.jpeg', fit: BoxFit.cover),
+                    'assets/images/party.jpeg', fit: BoxFit.cover),
               ),
             ),
             EventList(),

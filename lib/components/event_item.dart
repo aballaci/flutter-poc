@@ -10,16 +10,10 @@ class EventItem extends StatelessWidget {
   int index;
   Event event;
 
-  int nextRandomId() {
-    var random = Random();
-    return random.nextInt(32);
-  }
-
   EventItem(this.index, this.event);
 
   @override
   Widget build(BuildContext context) {
-    final nextRandId = nextRandomId();
     return Center(
       child: Card(
         child: InkWell(
@@ -29,12 +23,12 @@ class EventItem extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => DetailPage(event: event, index: nextRandId),
-                  ),
+                builder: (context) =>
+                    DetailPage(event: event, index: index),
+              ),
             );
           },
           child: Column(
-            mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               ClipRRect(
                 borderRadius: new BorderRadius.circular(8.0),
@@ -48,8 +42,7 @@ class EventItem extends StatelessWidget {
               ),
               ListTile(
                 leading: Text('21:00'),
-                title: Text(event.title,
-                    style: TextStyle(fontFamily: 'RobotoMono')),
+                title: Text(event.title),
                 subtitle: Text(event.organizer),
               ),
             ],
